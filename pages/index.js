@@ -7,7 +7,13 @@ export default function Home() {
   // --- Define tu título y descripción aquí ---
   const pageTitle = "Página Personal de Diego";
   const pageDescription = "Ingeniero de Cloud Security @ Google. Conoce mis intereses y proyectos.";
-  const siteUrl = "https://[tu-url-de-netlify].netlify.app"; // <-- ¡IMPORTANTE: Pon tu URL real aquí!
+  
+  // =================================================================
+  // === ¡¡¡CAMBIA ESTA LÍNEA POR TU URL REAL DE NETLIFY!!! ===
+  // =================================================================
+  const siteUrl = "https://diegonz.netlify.app"; 
+  // =================================================================
+  
   const previewImage = "/dagg.jpg"; // Usará tu foto de perfil
 
   return (
@@ -60,7 +66,26 @@ export default function Home() {
         
         {/* 3. Las Secciones */}
         <div className="sections-list">
-            {/* ... (tus secciones) ... */}
+
+            <div className="section">
+                <h3>Interest</h3>
+                <p>devops, linux, hacking, cloud, security, cybersecurity</p>
+            </div>
+
+            <div className="section">
+                <h3>What I like to do</h3>
+                <p>Sports, pickelball, boxing, etc</p>
+            </div>
+
+            <div className="section">
+                <h3>Interesting stuff</h3>
+                <p>article about devops</p>
+            </div>
+
+            <div className="section">
+                <h3>This poll will be the best one you should do on your life.</h3>
+            </div>
+
         </div>
       </main>
 
