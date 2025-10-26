@@ -7,9 +7,9 @@ body {
   background-color: #f0f2f5;
   color: #333;
   /* IMPORTANTE: Añade una imagen de fondo si quieres que el blur se note */
-  /* background-image: url('/tu-imagen-de-fondo.jpg'); */
-  /* background-size: cover; */
-  /* background-attachment: fixed; */
+  background-image: url('/public/logo-netlify.svg');
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 /* Contenedor principal que ya usas */
