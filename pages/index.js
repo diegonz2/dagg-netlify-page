@@ -17,13 +17,22 @@ export default function Home() {
           src="/dagg.jpg" 
           alt="Foto de Diego" 
           className="profile-image"
-          width={180}  // Ancho real de la imagen
-          height={180} // Alto real de la imagen
+          width={250}  // Ancho real de la imagen
+          height={250} // Alto real de la imagen
         />
-
-        {/* 2. Tu Título (ya lo tenías) */}
-        <Header title="¡Soy Diego!" />
-
+        <Header title={
+          <span className="main-title"> 
+            I'm Diego, Cloud Security Engineer working @
+            <span className="google-logo">
+              <span className="g-blue">G</span>
+              <span className="g-red">o</span>
+              <span className="g-yellow">o</span>
+              <span className="g-blue">g</span>
+              <span className="g-green">l</span>
+              <span className="g-red">e</span>
+            </span>
+          </span>
+        } />
         {/* 3. Las Secciones */}
         <div className="sections-list">
 
