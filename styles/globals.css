@@ -1,4 +1,4 @@
-/* * 1. Reseteo básico y el NUEVO FONDO CON GRADIENTE 
+/* * 1. Reseteo básico y TU NUEVO FONDO DE NUBES
  */
 html,
 body {
@@ -7,15 +7,15 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: #333;
 
-  /* * ¡AQUÍ ESTÁ LA MAGIA! 
-   * Un gradiente de fondo simple. Esto nos da la "textura" 
-   * necesaria para que el blur de las secciones sea visible.
+  /* * ¡AQUÍ ESTÁ EL CAMBIO! *
+   * Reemplazamos el gradiente por tu imagen de la carpeta /public
    */
-  background: linear-gradient(to bottom right, #89f7fe, #66a6ff);
+  background-image: url('/clouds.jpg');
+  background-size: cover; /* Para que cubra toda la pantalla */
   background-attachment: fixed; /* Fija el fondo para que el scroll se vea bien */
 }
 
-/* * 2. Contenedores principales (los mismos de antes) 
+/* * 2. Contenedores principales (sin cambios)
  */
 .container {
   padding: 0 2rem;
@@ -54,20 +54,14 @@ main {
   text-align: left;
 }
 
-/* * 5. ¡AQUÍ ESTÁ EL EFECTO TRANSLÚCIDO Y BLUR!
+/* * 5. EL EFECTO TRANSLÚCIDO Y BLUR (sin cambios)
+ * Esto ahora difuminará tu imagen 'clouds.jpg'
  */
 .section {
-  /* Fondo blanco con 65% de opacidad */
   background-color: rgba(255, 255, 255, 0.65); 
-  
-  /* El efecto de desenfoque "frosted glass" */
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px); /* Para Safari */
-
-  /* Un borde ligero para definir la tarjeta */
+  -webkit-backdrop-filter: blur(12px); 
   border: 1px solid rgba(255, 255, 255, 0.1);
-
-  /* El resto de los estilos que ya teníamos */
   border-radius: 12px;
   padding: 18px 25px;
   margin-bottom: 15px;
@@ -81,7 +75,7 @@ main {
 
 .section h3 {
   margin: 0 0 8px 0;
-  color: #004a99; /* Un azul un poco más oscuro para mejor contraste */
+  color: #004a99; 
 }
 
 .section p {
