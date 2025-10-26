@@ -6,15 +6,15 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Página Personal de Diego</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Welcome</title>
+        <link rel="icon" href="/favicon_turtle.ico" />
       </Head>
 
       <main>
         {/* 1. Tu Imagen */}
         {/* Next.js la tomará de la carpeta /public */}
         <Image 
-          src="/diego.jpg" 
+          src="/dagg.jpg" 
           alt="Foto de Diego" 
           className="profile-image"
           width={180}  // Ancho real de la imagen
