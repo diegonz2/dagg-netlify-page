@@ -1,18 +1,22 @@
-/* Reseteo básico y estilos del body */
+/* * 1. Reseteo básico y el NUEVO FONDO CON GRADIENTE 
+ */
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: #f0f2f5;
   color: #333;
-  /* IMPORTANTE: Añade una imagen de fondo si quieres que el blur se note */
-  background-image: url('/public/logo-netlify.svg');
-  background-size: cover;
-  background-attachment: fixed;
+
+  /* * ¡AQUÍ ESTÁ LA MAGIA! 
+   * Un gradiente de fondo simple. Esto nos da la "textura" 
+   * necesaria para que el blur de las secciones sea visible.
+   */
+  background: linear-gradient(to bottom right, #89f7fe, #66a6ff);
+  background-attachment: fixed; /* Fija el fondo para que el scroll se vea bien */
 }
 
-/* Contenedor principal que ya usas */
+/* * 2. Contenedores principales (los mismos de antes) 
+ */
 .container {
   padding: 0 2rem;
   display: flex;
@@ -29,57 +33,55 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 700px; /* Ancho máximo para tu contenido */
+  max-width: 700px;
   width: 100%;
 }
 
-/* ESTILOS NUEVOS PARA TU PÁGINA */
-
-/* Estilo para tu imagen */
+/* * 3. Estilo de tu imagen de perfil (sin cambios)
+ */
 .profile-image {
-  border-radius: 50%; /* Hace la imagen redonda */
-  object-fit: cover; /* Se asegura que la imagen se vea bien */
+  border-radius: 50%;
+  object-fit: cover;
   border: 5px solid #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
 }
 
-/* Contenedor de las secciones */
+/* * 4. Contenedor de las secciones (sin cambios)
+ */
 .sections-list {
   width: 100%;
   text-align: left;
 }
 
-/* Estilo para cada sección */
+/* * 5. ¡AQUÍ ESTÁ EL EFECTO TRANSLÚCIDO Y BLUR!
+ */
 .section {
-  /* === INICIO DE CAMBIOS === */
+  /* Fondo blanco con 65% de opacidad */
+  background-color: rgba(255, 255, 255, 0.65); 
   
-  /* 1. Cambiamos a un fondo blanco con 70% de opacidad */
-  background-color: rgba(255, 255, 255, 0.7); 
-  
-  /* 2. Añadimos el filtro de desenfoque (el efecto "frosted") */
+  /* El efecto de desenfoque "frosted glass" */
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px); /* Para compatibilidad con Safari */
+  -webkit-backdrop-filter: blur(12px); /* Para Safari */
 
-  /* === FIN DE CAMBIOS === */
+  /* Un borde ligero para definir la tarjeta */
+  border: 1px solid rgba(255, 255, 255, 0.1);
 
+  /* El resto de los estilos que ya teníamos */
   border-radius: 12px;
   padding: 18px 25px;
   margin-bottom: 15px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease;
-  
-  /* Opcional: Añadimos un borde ligero para que se vea mejor */
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .section:hover {
-  transform: scale(1.02); /* Efecto al pasar el mouse */
+  transform: scale(1.02);
 }
 
 .section h3 {
   margin: 0 0 8px 0;
-  color: #0056b3; /* Un color para el título */
+  color: #004a99; /* Un azul un poco más oscuro para mejor contraste */
 }
 
 .section p {
