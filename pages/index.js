@@ -92,8 +92,9 @@ export default function Home() {
           </div>
 
           <div className="section">
-            <a href="https://forms.gle/DmaKkF34bWHZKHfh9" target="_blank" rel="noopener noreferrer">
             <h3>This is the best poll you will ever participate in 📊</h3>
+            <a href="https://forms.gle/DmaKkF34bWHZKHfh9" target="_blank" rel="noopener noreferrer">
+            <h3>Click here 🫣</h3>
             </a>
           </div>
 
