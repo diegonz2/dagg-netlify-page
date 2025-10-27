@@ -83,7 +83,7 @@ export default function Home() {
               <a href="https://cloud.google.com/solutions/shifting-left-on-security" target="_blank" rel="noopener noreferrer">
                 Shifting left on Security
               </a>
-              
+
               {' & '}
               <a href="https://cloud.google.com/blog/topics/inside-google-cloud/meet-the-people-of-google-cloud-meet-kelsey" target="_blank" rel="noopener noreferrer">
                 Why empathy is important in Technology.
@@ -93,9 +93,11 @@ export default function Home() {
 
           <div className="section">
             <h3>This is the best poll you will ever participate in 📊</h3>
-            <a href="https://forms.gle/DmaKkF34bWHZKHfh9" target="_blank" rel="noopener noreferrer">
-              Click here 🫣
-            </a>
+            <p>
+              <a href="https://forms.gle/DmaKkF34bWHZKHfh9" target="_blank" rel="noopener noreferrer">
+                Click here 🫣
+              </a>
+            </p>
           </div>
 
         </div>
