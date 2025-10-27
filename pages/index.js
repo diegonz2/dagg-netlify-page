@@ -3,17 +3,17 @@ import Image from 'next/image' // Importamos el componente de Imagen
 import Header from '@components/Header'
 
 export default function Home() {
-  
+
   // --- Define tu título y descripción aquí ---
-  const pageTitle = "Página Personal de Diego";
-  const pageDescription = "Ingeniero de Cloud Security @ Google. Conoce mis intereses y proyectos.";
-  
+  const pageTitle = "Diego's Webpage";
+  const pageDescription = "Ingeniero de Cloud Security @ Google.";
+
   // =================================================================
   // === ¡¡¡CAMBIA ESTA LÍNEA POR TU URL REAL DE NETLIFY!!! ===
   // =================================================================
-  const siteUrl = "https://diegonz.netlify.app"; 
+  const siteUrl = "https://diegonz.netlify.app";
   // =================================================================
-  
+
   const previewImage = "/dagg.jpg"; // Usará tu foto de perfil
 
   return (
@@ -25,7 +25,7 @@ export default function Home() {
 
         {/* --- Meta Tags Esenciales (para SEO y WhatsApp) --- */}
         <meta name="description" content={pageDescription} />
-        
+
         {/* --- Open Graph (El estándar para Facebook, WhatsApp, etc.) --- */}
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
@@ -42,16 +42,16 @@ export default function Home() {
 
       <main>
         {/* 1. Tu Imagen */}
-        <Image 
-          src="/dagg.jpg" 
-          alt="Foto de Diego" 
+        <Image
+          src="/dagg.jpg"
+          alt="Foto de Diego"
           className="profile-image"
-          width={250}
-          height={250}
+          width={200}
+          height={200}
         />
-        
+
         <Header title={
-          <span className="main-title"> 
+          <span className="main-title">
             I'm Diego, Cloud Security Engineer working @
             <span className="google-logo">
               <span className="g-blue">G</span>
@@ -63,28 +63,39 @@ export default function Home() {
             </span>
           </span>
         } />
-        
+
         {/* 3. Las Secciones */}
         <div className="sections-list">
 
-            <div className="section">
-                <h3>Interest</h3>
-                <p>devops, linux, hacking, cloud, security, cybersecurity</p>
-            </div>
+          <div className="section">
+            <h3>Topics I'm interested in 🔐</h3>
+            <p>DevOps, Linux, Hacking, Cloud Computing, Security, Cybersecurity, Cyberspionage, IaC.</p>
+          </div>
 
-            <div className="section">
-                <h3>What I like to do</h3>
-                <p>Sports, pickelball, boxing, etc</p>
-            </div>
+          <div className="section">
+            <h3>What I like to do 🏆</h3>
+            <p>Football/Soccer, Boxing, Volleyball, Pickleball, Inline skating.</p>
+          </div>
 
-            <div className="section">
-                <h3>Interesting stuff</h3>
-                <p>article about devops</p>
-            </div>
+          <div className="section">
+            <h3>What resonates with me 💓</h3>
+            <p>
+              <a href="https://cloud.google.com/solutions/shifting-left-on-security" target="_blank" rel="noopener noreferrer">
+                Shifting left on Security
+              </a>
+              
+              {' & '}
+              <a href="https://cloud.google.com/blog/topics/inside-google-cloud/meet-the-people-of-google-cloud-meet-kelsey" target="_blank" rel="noopener noreferrer">
+                Why empathy is important in Technology.
+              </a>
+            </p>
+          </div>
 
-            <div className="section">
-                <h3>This poll will be the best one you should do on your life.</h3>
-            </div>
+          <div className="section">
+            <a href="https://forms.gle/DmaKkF34bWHZKHfh9" target="_blank" rel="noopener noreferrer">
+            <h3>This is the best poll you will ever participate in 📊</h3>
+            </a>
+          </div>
 
         </div>
       </main>
