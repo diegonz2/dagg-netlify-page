@@ -10,7 +10,7 @@ export default function Home() {
   const pageTitle = "Diego's Webpage";
   const pageDescription = "Cloud Security @ Google.";
   const siteUrl = "https://diegonz.netlify.app";
-  const previewImage = "/daggw.jpg";
+  const previewImage = "/dagg.jpg";
 
   return (
     <div className="container">
