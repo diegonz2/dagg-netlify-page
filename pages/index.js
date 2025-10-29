@@ -1,47 +1,54 @@
 import Head from 'next/head'
-import Image from 'next/image' // Importamos el componente de Imagen
+import Image from 'next/image'
 import Header from '@components/Header'
 
 export default function Home() {
 
-  // --- Define tu título y descripción aquí ---
+  // =================================================================
+  // ==  METADATA CONFIGURATION FOR SEO & LINK PREVIEWS  ==
+  // =================================================================
   const pageTitle = "Diego's Webpage";
-  const pageDescription = "Ingeniero de Cloud Security @ Google.";
-
-  // =================================================================
-  // === ¡¡¡CAMBIA ESTA LÍNEA POR TU URL REAL DE NETLIFY!!! ===
-  // =================================================================
+  const pageDescription = "Cloud Security @ Google.";
   const siteUrl = "https://diegonz.netlify.app";
-  // =================================================================
-
-  const previewImage = "/dagg.jpg"; // Usará tu foto de perfil
+  const previewImage = "/daggw.jpg";
 
   return (
     <div className="container">
+
+      {/* // ======================================
+      // ==  HEAD: PAGE METADATA  ==
+      // ======================================
+      // This controls the browser tab title 
+      // and the preview in apps like WhatsApp/Twitter.
+      */}
       <Head>
-        {/* --- Título Básico (para la pestaña del navegador) --- */}
         <title>{pageTitle}</title>
         <link rel="icon" href="/favicon_turtle.ico" />
 
-        {/* --- Meta Tags Esenciales (para SEO y WhatsApp) --- */}
+        {/* --- SEO & Essentials --- */}
         <meta name="description" content={pageDescription} />
 
-        {/* --- Open Graph (El estándar para Facebook, WhatsApp, etc.) --- */}
+        {/* --- Open Graph (WhatsApp, Facebook, etc.) --- */}
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:image" content={`${siteUrl}${previewImage}`} />
         <meta property="og:url" content={siteUrl} />
         <meta property="og:type" content="website" />
 
-        {/* --- Twitter Card (Para que se vea bien en Twitter) --- */}
+        {/* --- Twitter Card --- */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDescription} />
         <meta name="twitter:image" content={`${siteUrl}${previewImage}`} />
       </Head>
 
+      {/* // ======================================
+      // ==  MAIN: PRIMARY PAGE CONTENT  ==
+      // ======================================
+      */}
       <main>
-        {/* 1. Tu Imagen */}
+
+        {/* --- Profile Image --- */}
         <Image
           src="/dagg.jpg"
           alt="Foto de Diego"
@@ -50,6 +57,7 @@ export default function Home() {
           height={200}
         />
 
+        {/* --- Main Title (with Google colors) --- */}
         <Header title={
           <span className="main-title">
             I'm Diego, Cloud Security Engineer working @
@@ -64,7 +72,7 @@ export default function Home() {
           </span>
         } />
 
-        {/* 3. Las Secciones */}
+        {/* --- Sections List --- */}
         <div className="sections-list">
 
           <div className="section">
