@@ -1,57 +1,40 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from '@components/Header'
+import { content } from '../data/content'
 
 export default function Home() {
-
-  // =================================================================
-  // ==  METADATA CONFIGURATION FOR SEO & LINK PREVIEWS  ==
-  // =================================================================
-  const pageTitle = "Diego's Webpage";
-  const pageDescription = "Cloud Security @ Google.";
-  const siteUrl = "https://diegonz.netlify.app";
-  const previewImage = "/dagg.jpg";
+  const { meta, profile, header, sections } = content;
 
   return (
     <div className="container">
-
-      {/* // ======================================
-      // ==  HEAD: PAGE METADATA  ==
-      // ======================================
-      // This controls the browser tab title 
-      // and the preview in apps like WhatsApp/Twitter.
-      */}
       <Head>
-        <title>{pageTitle}</title>
-        <link rel="icon" href="/favicon_turtle.ico" />
+        <title>{meta.title}</title>
+        <link rel="icon" href={meta.favicon} />
+        <link rel="manifest" href="/manifest.json" />
 
         {/* --- SEO & Essentials --- */}
-        <meta name="description" content={pageDescription} />
+        <meta name="description" content={meta.description} />
 
         {/* --- Open Graph (WhatsApp, Facebook, etc.) --- */}
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:image" content={`${siteUrl}${previewImage}`} />
-        <meta property="og:url" content={siteUrl} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
+        <meta property="og:image" content={`${meta.siteUrl}${meta.previewImage}`} />
+        <meta property="og:url" content={meta.siteUrl} />
         <meta property="og:type" content="website" />
 
         {/* --- Twitter Card --- */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={pageDescription} />
-        <meta name="twitter:image" content={`${siteUrl}${previewImage}`} />
+        <meta name="twitter:title" content={meta.title} />
+        <meta name="twitter:description" content={meta.description} />
+        <meta name="twitter:image" content={`${meta.siteUrl}${meta.previewImage}`} />
       </Head>
 
-      {/* // ======================================
-      // ==  MAIN: PRIMARY PAGE CONTENT  ==
-      // ======================================
-      */}
       <main>
-
         {/* --- Profile Image --- */}
         <Image
-          src="/dagg.jpg"
-          alt="Foto de Diego"
+          src={profile.image}
+          alt={profile.alt}
           className="profile-image"
           width={200}
           height={200}
@@ -60,7 +43,7 @@ export default function Home() {
         {/* --- Main Title (with Google colors) --- */}
         <Header title={
           <span className="main-title">
-            I'm Diego, Cloud Security Engineer working @
+            {header.titlePrefix}
             <span className="google-logo">
               <span className="g-blue">G</span>
               <span className="g-red">o</span>
@@ -74,42 +57,24 @@ export default function Home() {
 
         {/* --- Sections List --- */}
         <div className="sections-list">
-
-          <div className="section">
-            <h3>Topics I'm interested in 🔐</h3>
-            <p>DevOps, Linux, Hacking, Cloud Computing, Security, Cybersecurity, Cyberspionage, IaC.</p>
-          </div>
-
-          <div className="section">
-            <h3>What I like to do 🏆</h3>
-            <p>Football/Soccer, Boxing, Volleyball, Pickleball, Inline skating.</p>
-          </div>
-
-          <div className="section">
-            <h3>What resonates with me 💓</h3>
-            <p>
-              <a href="https://cloud.google.com/solutions/shifting-left-on-security" target="_blank" rel="noopener noreferrer">
-                Shifting left on Security
-              </a>
-
-              {' & '}
-              <a href="https://cloud.google.com/blog/topics/inside-google-cloud/meet-the-people-of-google-cloud-meet-kelsey" target="_blank" rel="noopener noreferrer">
-                Why empathy is important in Technology.
-              </a>
-            </p>
-          </div>
-
-          <div className="section">
-            <h3>This is the best poll you will ever participate in 📊</h3>
-            <p>
-              <a href="https://forms.gle/DmaKkF34bWHZKHfh9" target="_blank" rel="noopener noreferrer">
-                Click here 🫣
-              </a>
-            </p>
-          </div>
+          {sections.map((section, index) => (
+            <div className="section" key={index}>
+              <h3>{section.title}</h3>
+              <p>
+                {section.content && section.content}
+                {section.links && section.links.map((link, i) => (
+                  <span key={i}>
+                    {link.prefix}
+                    <a href={link.url} target="_blank" rel="noopener noreferrer">
+                      {link.text}
+                    </a>
+                  </span>
+                ))}
+              </p>
+            </div>
+          ))}
         </div>
       </main>
-
     </div>
   )
 }
