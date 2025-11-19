@@ -2,12 +2,14 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Header from '@components/Header'
 import { content } from '../data/content'
+import InteractiveBackground from '@components/InteractiveBackground'
 
 export default function Home() {
   const { meta, profile, header, sections } = content;
 
   return (
     <div className="container">
+      <InteractiveBackground />
       <Head>
         <title>{meta.title}</title>
         <link rel="icon" href={meta.favicon} />
