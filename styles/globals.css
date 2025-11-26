@@ -124,8 +124,8 @@ main {
   transform: translateY(10px);
   /* Slide-up entry effect */
 
-  /* Compound transition for smooth expansion */
-  transition: opacity 2s ease, max-height 1s ease-out, transform 1s ease-out;
+  /* Fast transition for closing (Mouse Leave) */
+  transition: opacity 0.5s ease, max-height 0.5s ease-in, transform 0.5s ease-in;
 }
 
 /* * Active State (Hover):
@@ -137,6 +137,9 @@ main {
   max-height: 200px;
   /* Arbitrary value large enough for content */
   transform: translateY(0);
+
+  /* Slow transition for opening (Mouse Enter) */
+  transition: opacity 2s ease, max-height 1s ease-out, transform 1s ease-out;
 }
 
 /* * ==========================================================================
