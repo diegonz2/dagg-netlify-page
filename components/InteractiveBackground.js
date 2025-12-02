@@ -29,6 +29,8 @@ export default function InteractiveBackground() {
         // Texture loading
         const loader = new THREE.TextureLoader();
         const texture = loader.load('/clouds.jpg');
+        texture.wrapS = THREE.RepeatWrapping;
+        texture.wrapT = THREE.RepeatWrapping;
 
         // Custom Shader Material
         const material = new THREE.ShaderMaterial({
