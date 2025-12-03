@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from '@components/Header'
@@ -6,6 +7,7 @@ import InteractiveBackground from '@components/InteractiveBackground'
 
 export default function Home() {
   const { meta, profile, header, sections } = content;
+  const [currentImage, setCurrentImage] = useState(profile.image);
 
   return (
     <div className="container">
@@ -35,11 +37,17 @@ export default function Home() {
       <main>
         {/* --- Profile Image --- */}
         <Image
-          src={profile.image}
+          src={currentImage}
           alt={profile.alt}
           className="profile-image"
           width={200}
           height={200}
+          priority
+          onMouseDown={() => setCurrentImage('/dagg-nose.jpg')}
+          onMouseUp={() => setCurrentImage(profile.image)}
+          onMouseLeave={() => setCurrentImage(profile.image)}
+          onTouchStart={() => setCurrentImage('/dagg-nose.jpg')}
+          onTouchEnd={() => setCurrentImage(profile.image)}
         />
 
         {/* --- Main Title (with Google colors) --- */}

@@ -67,6 +67,7 @@ main {
   border: 5px solid #000000;
   box-shadow: 0 -1px 22px rgba(0, 0, 0, 0.8);
   margin-bottom: 0px;
+  cursor: pointer;
 }
 
 /* Auxiliary container for alignment */
