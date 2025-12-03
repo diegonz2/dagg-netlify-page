@@ -9,6 +9,17 @@ export default function Home() {
   const { meta, profile, header, sections } = content;
   const [currentImage, setCurrentImage] = useState(profile.image);
 
+  // Best Practice: Encapsulate logic in a handler function
+  // rather than writing inline functions in the JSX.
+  const handleProfileClick = () => {
+    setCurrentImage('/dagg-nose.jpg');
+
+    // Revert back to original image after 500ms
+    setTimeout(() => {
+      setCurrentImage(profile.image);
+    }, 500);
+  };
+
   return (
     <div className="container">
       <InteractiveBackground />
@@ -43,11 +54,8 @@ export default function Home() {
           width={200}
           height={200}
           priority
-          onMouseDown={() => setCurrentImage('/dagg-nose.jpg')}
-          onMouseUp={() => setCurrentImage(profile.image)}
-          onMouseLeave={() => setCurrentImage(profile.image)}
-          onTouchStart={() => setCurrentImage('/dagg-nose.jpg')}
-          onTouchEnd={() => setCurrentImage(profile.image)}
+          onClick={handleProfileClick}
+          style={{ cursor: 'pointer' }} // Inline style added to ensure UX clarity
         />
 
         {/* --- Main Title (with Google colors) --- */}
